@@ -1,23 +1,23 @@
 function solution(N) {
-    N = (N >>> 0).toString(2);
+  N = (N >>> 0).toString(2);
 
-    var binaryGap = 0, gapNum = 0;
+  var binaryGap = 0, gapNum = 0;
 
-    for(var i = 0, N_len = N.length;i < N_len; i++){
+  for(var i = 0, N_len = N.length;i < N_len; i++){
 
-      if(parseInt(N[i])) {
+    if(parseInt(N[i])) {
 
-        binaryGap = gapNum > binaryGap ? gapNum : binaryGap;
+      binaryGap = gapNum > binaryGap ? gapNum : binaryGap;
 
-        if(N_len == i){
-          return binaryGap;
-        }
-        gapNum = 0;
+      if(N_len == i){
+        return binaryGap;
       }
-      else{
-        gapNum++;
-      }
-
+      gapNum = 0;
     }
-    return binaryGap;
+    else{
+      gapNum++;
+    }
+
   }
+  return binaryGap;
+}
